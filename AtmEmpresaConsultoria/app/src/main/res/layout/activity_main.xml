@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="atmempresaconsultoria.cursoandroid.com.atmempresaconsultoria.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="387dp"
+        android:layout_height="516dp"
+        android:background="@android:color/background_light"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="-4dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            app:srcCompat="@drawable/logo"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/empresaId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/menu_empresa"
+            android:layout_marginTop="36dp"
+            android:layout_below="@+id/imageView"
+            android:layout_alignLeft="@+id/imageView"
+            android:layout_alignStart="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/servicoId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/menu_servico"
+            android:layout_alignTop="@+id/empresaId"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/clienteId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/menu_cliente"
+            android:layout_below="@+id/empresaId"
+            android:layout_alignLeft="@+id/empresaId"
+            android:layout_alignStart="@+id/empresaId"
+            android:layout_marginTop="45dp" />
+
+        <ImageView
+            android:id="@+id/contatoId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/servicoId"
+            android:layout_alignStart="@+id/servicoId"
+            android:layout_alignTop="@+id/clienteId"
+            app:srcCompat="@drawable/menu_contato" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
