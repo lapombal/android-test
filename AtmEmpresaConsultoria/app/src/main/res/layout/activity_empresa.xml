@@ -12,7 +12,8 @@
         android:layout_height="510dp"
         android:padding="@dimen/padding_padrao"
         tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -23,7 +24,9 @@
             tools:layout_editor_absoluteY="7dp"
             android:layout_alignParentTop="true"
             android:layout_alignLeft="@+id/scrollView3"
-            android:layout_alignStart="@+id/scrollView3" />
+            android:layout_alignStart="@+id/scrollView3"
+            android:contentDescription=""
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/textView3"
@@ -47,22 +50,20 @@
             tools:layout_editor_absoluteX="32dp"
             tools:layout_editor_absoluteY="95dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:background="@color/background_scroll">
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/scrollView3"
-                android:layout_alignStart="@+id/scrollView3"
+
                 android:layout_alignTop="@+id/scrollView3"
                 android:padding="@dimen/padding_padrao"
-                android:text="Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet,Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet,Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet,Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet, Lorem ipsum dolorem sit amet."
+                android:text="@string/texto_sobre_empresa"
                 tools:layout_editor_absoluteX="191dp"
-                tools:layout_editor_absoluteY="227dp" />
+                tools:layout_editor_absoluteY="227dp"
+                tools:ignore="ObsoleteLayoutParam" />
         </ScrollView>
-
-
-
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
