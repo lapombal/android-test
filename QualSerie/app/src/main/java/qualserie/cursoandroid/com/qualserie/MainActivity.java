@@ -1,7 +1,7 @@
 package qualserie.cursoandroid.com.qualserie;
 
 import android.app.Activity;
-import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -10,6 +10,7 @@ public class MainActivity extends Activity {
 
     private SeekBar seekbar;
     private ImageView imagemExibicao;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class MainActivity extends Activity {
                     imagemExibicao.setImageResource( R.drawable.muito );
                 }else if (valorProgresso == 4){
                     imagemExibicao.setImageResource( R.drawable.susto );
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.grito_de_monstro);
+                    tocarSom();
                 }
 
             }
@@ -46,5 +49,22 @@ public class MainActivity extends Activity {
 
             }
         });
+    }
+
+    public void tocarSom(){
+        if( mediaPlayer != null){
+            mediaPlayer.start();
+        }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        if( mediaPlayer != null){
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+
+        super.onDestroy();
     }
 }

@@ -1,11 +1,10 @@
 package togglebutton.cursoandroid.com.togglebutton;
 
-import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.CompoundButton;
-import android.widget.TextView;
-import android.widget.ToggleButton;
+        import android.app.Activity;
+        import android.os.Bundle;
+        import android.widget.CompoundButton;
+        import android.widget.TextView;
+        import android.widget.ToggleButton;
 
 public class MainActivity extends Activity {
 

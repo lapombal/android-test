@@ -25,7 +25,8 @@
         android:layout_marginTop="75dp"
         android:text="@string/title_txt"
         android:textOff="Desligado"
-        android:textOn="Ligado" />
+        android:textOn="Ligado"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textoExibicaoId"

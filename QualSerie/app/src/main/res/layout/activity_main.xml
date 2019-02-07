@@ -11,12 +11,12 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/logo"
         android:contentDescription=""
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <SeekBar
         android:id="@+id/seekBarId"
@@ -51,9 +51,9 @@
         android:id="@+id/imagemExibicaoId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/seekBarId"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/pouco"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        android:layout_below="@+id/seekBarId"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5E9B9"
+    tools:context="somdosbichos.cursoandroid.com.somdosbichos.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/logo"
+        tools:ignore="ContentDescription"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/caoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cao"
+        android:contentDescription=""
+        tools:ignore="ContentDescription"
+        android:layout_alignTop="@+id/gatoId"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/gatoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gato"
+        tools:ignore="ContentDescription"
+        android:layout_below="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_marginTop="12dp" />
+
+    <ImageView
+        android:id="@+id/leaoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/leao"
+        android:layout_below="@+id/caoId"
+        android:layout_alignLeft="@+id/caoId"
+        android:layout_alignStart="@+id/caoId"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/macacoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/macaco"
+        android:layout_alignBottom="@+id/leaoId"
+        android:layout_alignRight="@+id/gatoId"
+        android:layout_alignEnd="@+id/gatoId"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ovelhaId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:background="@drawable/ovelha"
+        tools:ignore="ContentDescription"
+        android:layout_below="@+id/leaoId"
+        android:layout_alignLeft="@+id/leaoId"
+        android:layout_alignStart="@+id/leaoId" />
+
+    <ImageView
+        android:id="@+id/vacaId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ovelhaId"
+        android:layout_alignLeft="@+id/macacoId"
+        android:layout_alignStart="@+id/macacoId"
+        android:background="@drawable/vaca"
+        android:contentDescription=""
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/direitos"
+        tools:ignore="ContentDescription" />
+</RelativeLayout>
