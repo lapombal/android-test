@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "350516012306",
+    "firebase_url": "https://projeto-sgs-9f95c.firebaseio.com",
+    "project_id": "projeto-sgs-9f95c",
+    "storage_bucket": "projeto-sgs-9f95c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350516012306:android:af738c8e0af864a6",
+        "android_client_info": {
+          "package_name": "com.security.br.org.sidi.sgstrial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350516012306-b8amvfcubbeb5imufhtd5bdqnggtfahg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.security.br.org.sidi.sgstrial",
+            "certificate_hash": "ce20ee1832602c5d12eae56318322a6221bc62d6"
+          }
+        },
+        {
+          "client_id": "350516012306-3bkbil31heap77brks8c2dlf6f3ppcm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH8Y_sVYpuWFWqplSdhM6V2-pmhQDwibA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350516012306-3bkbil31heap77brks8c2dlf6f3ppcm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

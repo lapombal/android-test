@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">S.G.S Trial</string>
+    <string name="btnTransferencia">Nova Transferência</string>
+    <string name="btnRetorno">Concluir Transferência</string>
+</resources>
