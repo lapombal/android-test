@@ -1,5 +1,24 @@
 <resources>
-    <string name="app_name">S.G.S Trial</string>
+    <string name="app_name">Central de Segurança</string>
     <string name="btnTransferencia">Nova Transferência</string>
     <string name="btnRetorno">Concluir Transferência</string>
+    <string name="txtSaida">Saída de Equipamento</string>
+    <string name="txtEntrada">Entrada de Equipamento</string>
+    <string name="txtEmergencia">Contatos de Emergência</string>
+    <string name="txtSairEncerrar">Sair do Aplicativo</string>
+    <string name="labelName">Nome do Colaborador</string>
+    <string name="txtDestino">Destino do Equipamento</string>
+    <string name="txtJeriva">Jerivá</string>
+    <string name="txtJacaranda">Jacarandá</string>
+    <string name="labelIdColaborador">ID do Colaborador</string>
+    <string name="txtIdColaborador">Digite o ID de Rede do Colaborador</string>
+    <string name="labelCodigoAsset">Codigo do Equipamento</string>
+    <string name="txtCodigoAsset">Digite o Código do Equipamento</string>
+    <string name="txtTipoEquipamento">Tipo do Equipamento</string>
+    <string name="txtDesktop">Desktop</string>
+    <string name="txtLaptop">Laptop</string>
+    <string name="txtGadgets">Amostras</string>
+    <string name="txtAcessorios">Acessórios</string>
+    <string name="btnTransferir">Concluir</string>
+    <string name="barcode_screen">Leia o Barcode ou QRCode</string>
 </resources>

@@ -6,20 +6,41 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_sgs_trial"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_sgs_trial"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivityRetorno"></activity>
-        <activity android:name=".MainActivitySaida" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".ActivityQRBarReader"
+            android:label="@string/barcode_screen"
+            android:parentActivityName=".MainActivityOutAsset"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
+            android:name=".MainActivitySOSContact"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".MainActivityReturnAsset"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".MainActivityOutAsset"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="sensorPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

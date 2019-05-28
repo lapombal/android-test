@@ -1,41 +1,71 @@
 package com.security.br.org.sidi.sgstrial;
 
-import android.provider.ContactsContract;
-import android.renderscript.Script;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ViewDebug;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.Calendar;
+import android.view.View;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
+
+    //private ImageButton saidaEquipamento;
+    private ImageButton entradaEquipamento;
+    private ImageButton contatoEmergencia;
+    private ImageButton sairAplicativo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DatabaseReference transferenciaSgsReference = iniciaEstruturaBase();
+        //saidaEquipamento = findViewById(R.id.imgBtnSaidaEquip);
 
-        transferenciaSgsReference.setValue("Teste");
+        entradaEquipamento = findViewById(R.id.imgBtnEntdaEquip);
+        contatoEmergencia = findViewById(R.id.imgBtnEmergencia);
+        sairAplicativo = findViewById(R.id.imgBtnEncerrar);
+
+        /*saidaEquipamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //startActivity(new Intent(MainActivity.this, MainActivityOutAsset.class));
+            }
+        });*/
+
+        entradaEquipamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (CliqueTeste.testClique(1000)) {
+                    startActivity(new Intent(MainActivity.this, MainActivityReturnAsset.class));
+                }
+            }
+        });
+
+        contatoEmergencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (CliqueTeste.testClique(1000)) {
+                    startActivity(new Intent(MainActivity.this, MainActivitySOSContact.class));
+                }
+            }
+        });
+
+        sairAplicativo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (CliqueTeste.testClique(1000)) {
+                    finish();
+                }
+            }
+        });
 
     }
 
-    private DatabaseReference iniciaEstruturaBase(){
+    public void startOutActivity(View view) {
 
-        DatabaseReference sgsfireReference = FirebaseDatabase.getInstance().getReference();
-
-        Calendar calendar = Calendar.getInstance();
-
-        Integer dia = calendar.get(Calendar.DAY_OF_MONTH);
-        Integer ano = calendar.get(Calendar.YEAR);
-        Integer mes = calendar.get(Calendar.MONTH);
-
-        DatabaseReference transferenciaReference = sgsfireReference.child("transferencia").child( ano.toString() ).child( mes.toString() ).child( dia.toString() );
-
-        return transferenciaReference;
+        if (CliqueTeste.testClique(1000)) {
+            Intent outActivity = new Intent(MainActivity.this, MainActivityOutAsset.class);
+            startActivity(outActivity);
+        }
     }
+
 }

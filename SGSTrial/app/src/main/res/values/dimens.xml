@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textMargem">55dp</dimen>
+    <dimen name="radioSpace">20dp</dimen>
+    <dimen name="margemSpace">5dp</dimen>
+    <dimen name="margemTopBtn">5dp</dimen>
+    <dimen name="margemTitulo">10dp</dimen>
+    <dimen name="tamanhoLayout">0dp</dimen>
+</resources>

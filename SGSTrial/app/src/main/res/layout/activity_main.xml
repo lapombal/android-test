@@ -4,4 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/labelSaida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgBtnSaidaEquip"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/txtSaida"
+        android:textSize="14sp"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <TextView
+        android:id="@+id/labelEntrada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgBtnEntdaEquip"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="227dp"
+        android:layout_marginLeft="227dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/txtEntrada"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <TextView
+        android:id="@+id/labelContEmergencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginBottom="130dp"
+        android:text="@string/txtEmergencia" />
+
+    <TextView
+        android:id="@+id/labelSairApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginBottom="130dp"
+        android:layout_toEndOf="@+id/labelContEmergencia"
+        android:layout_toRightOf="@+id/labelContEmergencia"
+        android:text="@string/txtSairEncerrar" />
+
+    <ImageButton
+        android:id="@+id/imgBtnSaidaEquip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/img_saida_pq"
+        android:contentDescription="@string/txtSaida"
+        android:onClick="startOutActivity" />
+
+    <ImageButton
+        android:id="@+id/imgBtnEntdaEquip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="44dp"
+        android:background="@drawable/img_entrada_pq"
+        android:contentDescription="@string/txtEntrada" />
+
+    <ImageButton
+        android:id="@+id/imgBtnEmergencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/labelContEmergencia"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/img_telefone_pq"
+        android:contentDescription="@string/txtEmergencia" />
+
+    <ImageButton
+        android:id="@+id/imgBtnEncerrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/labelSairApp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/img_desligar_pq"
+        android:contentDescription="@string/txtSairEncerrar" />
+
+</RelativeLayout>

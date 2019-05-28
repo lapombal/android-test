@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivityOutAsset">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/labelTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margemTopBtn"
+            android:layout_marginLeft="@dimen/margemTopBtn"
+            android:layout_marginTop="@dimen/margemTopBtn"
+            android:layout_marginBottom="@dimen/margemTitulo"
+            android:text="@string/btnTransferencia"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/ubuntu_mono"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="36dp" />
+    </FrameLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tamanhoLayout"
+        android:layout_marginTop="@dimen/margemTopBtn"
+        android:layout_marginBottom="@dimen/margemTopBtn" />
+
+    <TextView
+        android:id="@+id/labelID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margemSpace"
+        android:layout_marginLeft="@dimen/margemSpace"
+        android:text="@string/labelIdColaborador"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <EditText
+        android:id="@+id/txtIdColaborador"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/txtIdColaborador"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        tools:targetApi="o"
+        app:fontFamily="@font/ubuntu_mono"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tamanhoLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/labelDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margemSpace"
+        android:layout_marginLeft="@dimen/margemSpace"
+        android:text="@string/txtDestino"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <RadioGroup
+        android:id="@+id/rdoGroupDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="auto"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="129dp">
+
+        <RadioButton
+            android:id="@+id/rdoBTJeriva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/radioSpace"
+            android:layout_marginRight="@dimen/radioSpace"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txtJeriva"
+            app:fontFamily="@font/ubuntu_mono" />
+
+        <RadioButton
+            android:id="@+id/rdoBTJacaranda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/radioSpace"
+            android:layout_marginLeft="@dimen/radioSpace"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:includeFontPadding="false"
+            android:text="@string/txtJacaranda"
+            app:fontFamily="@font/ubuntu_mono" />
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tamanhoLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/labelCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margemSpace"
+        android:layout_marginStart="@dimen/margemSpace"
+        android:text="@string/labelCodigoAsset"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/txtCodigoAsset"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margemSpace"
+            android:layout_marginLeft="@dimen/margemSpace"
+            android:ems="10"
+            android:hint="@string/txtCodigoAsset"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:fontFamily="@font/ubuntu_mono"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/btnLeitorCodigo"
+            android:layout_width="47dp"
+            android:layout_height="43dp"
+            android:background="@drawable/img_leitor_codigo"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tamanhoLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/labelTipoEquipamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margemSpace"
+        android:layout_marginStart="@dimen/margemSpace"
+        android:text="@string/txtTipoEquipamento"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <RadioGroup
+        android:id="@+id/rdoGroupTipoEquipamento"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdoBTDesktop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txtDesktop"
+            app:fontFamily="@font/ubuntu_mono" />
+
+        <RadioButton
+            android:id="@+id/rdoBTLaptop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txtLaptop"
+            app:fontFamily="@font/ubuntu_mono" />
+
+        <RadioButton
+            android:id="@+id/rdoBTAmostras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txtGadgets"
+            app:fontFamily="@font/ubuntu_mono" />
+
+        <RadioButton
+            android:id="@+id/rdoBTAcessorios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txtAcessorios"
+            app:fontFamily="@font/ubuntu_mono" />
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tamanhoLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnTransferir"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="41dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/btnTransferir"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textStyle="bold"
+            app:fontFamily="@font/ubuntu_mono"/>
+    </RelativeLayout>
+
+</LinearLayout>
