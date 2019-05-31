@@ -6,6 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+/********************************************
+ *
+ * @author l.pombal
+ *
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     //private ImageButton saidaEquipamento;
@@ -34,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         entradaEquipamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (CliqueTeste.testClique(1000)) {
+                if (TestClick.testClick(1000)) {
                     startActivity(new Intent(MainActivity.this, MainActivityReturnAsset.class));
                 }
             }
@@ -43,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         contatoEmergencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (CliqueTeste.testClique(1000)) {
+                if (TestClick.testClick(1000)) {
                     startActivity(new Intent(MainActivity.this, MainActivitySOSContact.class));
                 }
             }
@@ -52,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         sairAplicativo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (CliqueTeste.testClique(1000)) {
+                if (TestClick.testClick(1000)) {
                     finish();
                 }
             }
@@ -62,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startOutActivity(View view) {
 
-        if (CliqueTeste.testClique(1000)) {
+        if (TestClick.testClick(1000)) {
             Intent outActivity = new Intent(MainActivity.this, MainActivityOutAsset.class);
             startActivity(outActivity);
         }

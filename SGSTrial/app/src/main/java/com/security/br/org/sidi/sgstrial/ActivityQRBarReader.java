@@ -8,6 +8,12 @@ import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
+/********************************************
+ *
+ * @author l.pombal
+ *
+ */
+
 public class ActivityQRBarReader extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     ZXingScannerView scannerView;
@@ -21,8 +27,6 @@ public class ActivityQRBarReader extends AppCompatActivity implements ZXingScann
 
     @Override
     public void handleResult(Result result) {
-        /*MainActivityOutAsset..setText(result.getText());*/
-
         String resultado = result.getText();
         Intent returnIntent = new Intent();
         returnIntent.putExtra("resultado",resultado);

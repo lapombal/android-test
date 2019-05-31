@@ -7,28 +7,6 @@
     android:orientation="vertical"
     tools:context=".MainActivityOutAsset">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark">
-
-        <TextView
-            android:id="@+id/labelTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margemTopBtn"
-            android:layout_marginLeft="@dimen/margemTopBtn"
-            android:layout_marginTop="@dimen/margemTopBtn"
-            android:layout_marginBottom="@dimen/margemTitulo"
-            android:text="@string/btnTransferencia"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:fontFamily="@font/ubuntu_mono"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="36dp" />
-    </FrameLayout>
-
     <Space
         android:layout_width="wrap_content"
         android:layout_height="@dimen/tamanhoLayout"
@@ -44,7 +22,8 @@
         android:text="@string/labelIdColaborador"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:fontFamily="@font/ubuntu_mono" />
+        app:fontFamily="@font/ubuntu_mono"
+        tools:text="@string/labelIdColaborador" />
 
     <EditText
         android:id="@+id/txtIdColaborador"

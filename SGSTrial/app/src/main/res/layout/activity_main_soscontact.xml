@@ -6,4 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivitySOSContact">
 
+    <ImageView
+        android:id="@+id/imgUnderConstruction"
+        android:layout_width="326dp"
+        android:layout_height="422dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:contentDescription="@string/txtEmDesenvolvimento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_under_construction" />
+
+    <TextView
+        android:id="@+id/txtUnderConstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/txtEmDesenvolvimento"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:fontFamily="@font/ubuntu_mono"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgUnderConstruction"
+        app:layout_constraintVertical_bias="0.115" />
 </android.support.constraint.ConstraintLayout>

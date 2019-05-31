@@ -18,14 +18,17 @@
             android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".MainActivitySOSContact"
+            android:label="@string/txtEmergencia"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".MainActivityReturnAsset"
+            android:label="@string/btnRetorno"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".MainActivityOutAsset"
+            android:label="@string/btnTransferencia"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="sensorPortrait" />
         <activity

@@ -2,11 +2,17 @@ package com.security.br.org.sidi.sgstrial;
 
 import android.os.Handler;
 
-public class CliqueTeste {
+/********************************************
+ *
+ * @author l.pombal
+ *
+ */
+
+public class TestClick {
 
     private static int clique = 0;
 
-    public static boolean testClique(int ms) {
+    public static boolean testClick(int ms) {
 
         //Handler handler = new Handler();
 

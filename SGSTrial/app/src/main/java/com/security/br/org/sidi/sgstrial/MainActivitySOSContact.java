@@ -5,6 +5,12 @@ import android.os.Bundle;
 
 public class MainActivitySOSContact extends AppCompatActivity {
 
+    /********************************************
+     *
+     * @author l.pombal
+     *
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

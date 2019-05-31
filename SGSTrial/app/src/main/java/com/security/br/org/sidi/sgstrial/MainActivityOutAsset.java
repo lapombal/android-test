@@ -1,65 +1,82 @@
 package com.security.br.org.sidi.sgstrial;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+/********************************************
+ *
+ * @author l.pombal
+ *
+ */
 
-import java.util.Calendar;
+public class MainActivityOutAsset extends AppCompatActivity {
 
-public class MainActivityOutAsset extends Activity {
-
-    private EditText idColaborador;
-    private EditText codEquipamento;
-    private RadioGroup rdoDestino;
-    private RadioButton rdobtDestinoEscolhido;
-    private RadioGroup rdoTipo;
-    private RadioButton rdobtTipoEscolhido;
-    private RadioButton rdobtEscolhido;
-    private Button btnLeitor;
-    private Button btnConfirmar;
+    private EditText idPerson;
+    private EditText codeEquip;
+    private RadioGroup rdoDestiny;
+    private RadioGroup rdoType;
+    private RadioButton rdoBtChosen;
+    private Button btnQRBarReader;
+    private Button btnSubmit;
 
     static final int ACTIVITY_2_REQUEST = 1;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_out_asset);
 
-        idColaborador = findViewById(R.id.txtIdColaborador);
-        codEquipamento = findViewById(R.id.txtCodigoAsset);
-        rdoDestino = findViewById(R.id.rdoGroupDestino);
-        rdoTipo = findViewById(R.id.rdoGroupTipoEquipamento);
-        btnLeitor = findViewById(R.id.btnLeitorCodigo);
-        btnConfirmar = findViewById(R.id.btnTransferir);
+        startUIComponents();
 
-        btnLeitor.setOnClickListener(new View.OnClickListener() {
+        btnQRBarReader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 readQRBarCode();
             }
         });
 
-        btnConfirmar.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                if (checkInformation().equals("")){
+                    ControlData asset = new ControlData();
+
+                    asset.writeData(idPerson.getText().toString(), codeEquip.getText().toString(), getRdoValue(rdoDestiny), getRdoValue(rdoType), "Em Andamento");
+                    Toast.makeText(MainActivityOutAsset.this, "Cadastro realizado", Toast.LENGTH_SHORT).show();
+                    finish();
+
+                }else{
+                    String error = checkInformation();
+                    Toast.makeText(MainActivityOutAsset.this, "Campos Obrigatórios não Preenchidos: \n" + error, Toast.LENGTH_LONG).show();
+                }
 
             }
         });
     }
 
-    /* Chamadas de código para preenchimento do Campo Código do Equipamento */
+    private void startUIComponents() {
+        idPerson = findViewById(R.id.txtIdColaborador);
+        codeEquip = findViewById(R.id.txtCodigoAsset);
+        rdoDestiny = findViewById(R.id.rdoGroupDestino);
+        rdoType = findViewById(R.id.rdoGroupTipoEquipamento);
+        btnQRBarReader = findViewById(R.id.btnLeitorCodigo);
+        btnSubmit = findViewById(R.id.btnTransferir);
+    }
+
+    /* Métodos de preenchimento do Campo Código do Equipamento */
 
     private void readQRBarCode(){
-        if (CliqueTeste.testClique(1000)) {
+        if (TestClick.testClick(1000)) {
             Intent outActivity = new Intent(this, ActivityQRBarReader.class);
             startActivityForResult(outActivity, ACTIVITY_2_REQUEST);
         }
@@ -70,56 +87,68 @@ public class MainActivityOutAsset extends Activity {
 
         if (requestCode == ACTIVITY_2_REQUEST) {
             if(resultCode == RESULT_OK){
-                String resultado = data.getStringExtra("resultado");
-                codEquipamento.setText(resultado);
+                String result = data.getStringExtra("resultado");
+                codeEquip.setText(result);
             }
         }
     }
 
-    /* Métodos responsáveis pela seleção do Botão */
+    /* Métodos responsáveis pela verificação de dados e recuperação das informações do Radio Button (Destino ou Tipo de equipamento) */
 
-    private String verifyRdoButton(RadioGroup rdoGroupSelection){
+    private String getRdoValue(RadioGroup rdoGroupSelection) {
 
         int idRdoBTSelected = rdoGroupSelection.getCheckedRadioButtonId();
         String txtRdoButton = "";
+        rdoBtChosen = findViewById(idRdoBTSelected);
 
         if (idRdoBTSelected > 0){
-            rdobtEscolhido = findViewById(idRdoBTSelected);
-            txtRdoButton = (String) rdobtEscolhido.getText();
+
+            txtRdoButton = (String) rdoBtChosen.getText();
+
         }
 
         return txtRdoButton;
 
     }
 
-    /*DatabaseReference transferenciaSgsReference = iniciaEstruturaBase();
+    private String checkInformation (){
+        String error_message = "";
 
-        Transferencia asset = new Transferencia();
+        if(idPerson.getText().length() == 0){
 
-        asset.setAsset("S12052258");
-        asset.setDestino("Jacarandá");
-        asset.setNome("Luis de Camoes");
-        asset.setData("13:17");
-        asset.setStatus("Em Andamento");
+            idPerson.setError("Digite o ID do Colaborador!");
+            error_message = "ID do Colaborador\n";
 
-        //asset.iniciaTransferencia("Luis de Camoes", "S170544596", "Jacarandá", "Em Andamento", "27/05/2019");
+        }else if(idPerson.length() < 4){
 
-        transferenciaSgsReference.setValue( asset );*/
+            idPerson.setError("Valor inserido não é valido");
+            error_message = "ID do Colaborador - Valor muito curto!\n";
 
-    private DatabaseReference iniciaEstruturaBase(){
+        }
 
-        DatabaseReference sgsfireReference = FirebaseDatabase.getInstance().getReference();
+        if(codeEquip.getText().length() == 0){
 
-        Calendar calendar = Calendar.getInstance();
+            codeEquip.setError("Digite ou Leia o Codigo do Equipamento");
+            error_message += "Codigo do Equipamento\n";
 
-        Integer dia = calendar.get(Calendar.DAY_OF_MONTH);
-        Integer ano = calendar.get(Calendar.YEAR);
-        Integer mes = calendar.get(Calendar.MONTH);
+        }else if(codeEquip.length() < 7){
 
+            codeEquip.setError("Valor inserido não é valido");
+            error_message += "Codigo do Equipamento - Valor muito curto!\n";
 
-        DatabaseReference transferenciaReference = sgsfireReference.child("transferencia").child( ano.toString() ).child( mes.toString() ).child( dia.toString() ).child("002");
+        }
 
-        return transferenciaReference;
+        if(getRdoValue(rdoDestiny).equals(""))
+        {
+            error_message += "Destino do Equipamento\n";
+        }
+
+        if(getRdoValue(rdoType).equals("")){
+            error_message += "Tipo do Equipamento\n";
+
+        }
+
+        return error_message;
+
     }
-
 }
