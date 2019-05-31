@@ -1,24 +1,14 @@
 package com.security.br.org.sidi.sgstrial;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,12 +26,10 @@ public class MainActivityReturnAsset extends AppCompatActivity {
     private Button btnSubmit;
 
     ControlData dbAcessObj = new ControlData();
-    AssetOut assetObj = new AssetOut();
 
-    static final int ACTIVITY_2_REQUEST = 1;
+    private static final int ACTIVITY_2_REQUEST = 1;
 
     private List<AssetOut> listAssetOut = new ArrayList<AssetOut>();
-    private String uuid = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +50,11 @@ public class MainActivityReturnAsset extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                listAssetOut = dbAcessObj.getListAssetOut();
 
                 if (!listAssetOut.isEmpty()){
 
-                    dbAcessObj.updateDataStatus(uuid, "Concluído");
+                    dbAcessObj.updateDataStatus(dbAcessObj.getUuid(), "Concluído");
                     Toast.makeText(MainActivityReturnAsset.this, "Processo Concluído com Sucesso!", Toast.LENGTH_SHORT).show();
                     finish();
 
@@ -76,6 +65,12 @@ public class MainActivityReturnAsset extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void startUIComponents() {
+        codeEquip = findViewById(R.id.txtCodigoAsset);
+        btnQRBarCode = findViewById(R.id.btnLeitorCodigo);
+        btnSubmit = findViewById(R.id.btnTransferir);
     }
 
     private void verifyTextChange() {
@@ -96,7 +91,7 @@ public class MainActivityReturnAsset extends AppCompatActivity {
 
                 if((!codWrote.isEmpty())&&(codWrote.length()>6)){
                     btnSubmit.setVisibility(View.VISIBLE);
-                    searchItem(codWrote);
+                    dbAcessObj.searchItem(codWrote);
 
                 }else{
                     btnSubmit.setVisibility(View.INVISIBLE);
@@ -104,49 +99,6 @@ public class MainActivityReturnAsset extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    private void searchItem(final String codWrote) {
-        DatabaseReference refDb = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference itemRef = refDb.child("transferencia");
-
-        Log.i("SGS.SIDI", "Iniciando Busca de Dados!");
-
-        listAssetOut.clear();
-
-        itemRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.i("SGS.SIDI", "Dados localizados!");
-                for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
-                    AssetOut m = objSnapshot.getValue(AssetOut.class);
-
-                    if ((m.getAsset().equals(codWrote)) && (!m.getStatus().equals("Concluído"))) {
-
-                        Log.i("SGS.OBJ.SIDI", "CHAVE DO OBJETO: " + objSnapshot.getKey());
-                        Log.i("SGS.SIDI", "Informação encontrada na base: " + dataSnapshot.getValue().toString());
-                        listAssetOut.add(assetObj);
-                        assetObj = objSnapshot.getValue(AssetOut.class);
-                        uuid = objSnapshot.getKey();
-
-                    } else {
-                        Log.i("SGS.SIDI", "Valor não encontrado!");
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void startUIComponents() {
-        codeEquip = findViewById(R.id.txtCodigoAsset);
-        btnQRBarCode = findViewById(R.id.btnLeitorCodigo);
-        btnSubmit = findViewById(R.id.btnTransferir);
     }
 
     /* Métodos de preenchimento do Campo Código do Equipamento */

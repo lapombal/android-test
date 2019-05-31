@@ -23,11 +23,10 @@ public class MainActivityOutAsset extends AppCompatActivity {
     private EditText codeEquip;
     private RadioGroup rdoDestiny;
     private RadioGroup rdoType;
-    private RadioButton rdoBtChosen;
     private Button btnQRBarReader;
     private Button btnSubmit;
 
-    static final int ACTIVITY_2_REQUEST = 1;
+    private static final int ACTIVITY_2_REQUEST = 1;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -96,6 +95,7 @@ public class MainActivityOutAsset extends AppCompatActivity {
     /* Métodos responsáveis pela verificação de dados e recuperação das informações do Radio Button (Destino ou Tipo de equipamento) */
 
     private String getRdoValue(RadioGroup rdoGroupSelection) {
+        RadioButton rdoBtChosen;
 
         int idRdoBTSelected = rdoGroupSelection.getCheckedRadioButtonId();
         String txtRdoButton = "";

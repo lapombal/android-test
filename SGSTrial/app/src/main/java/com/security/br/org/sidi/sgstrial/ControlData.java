@@ -2,19 +2,18 @@ package com.security.br.org.sidi.sgstrial;
 
 import android.icu.text.SimpleDateFormat;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /********************************************
  *
@@ -25,51 +24,51 @@ import java.util.Date;
 public class ControlData {
 
     private final String NODE_DB = "transferencia";
-    private String statusRet = "";
-    AssetOut st = new AssetOut();
+    private String uuid;
 
-    //private List<ControlData> listData = new ArrayList<ControlData>();
-    //private ArrayAdapter<ControlData> arrayAdapterData;
+    private List<AssetOut> listAssetOut = new ArrayList<AssetOut>();
 
     private DatabaseReference referenceDB = FirebaseDatabase.getInstance().getReference();
 
     public ControlData() {
     }
 
-    public void item (String txtWrote){
+    public String getUuid() {
+        return uuid;
+    }
 
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public List<AssetOut> getListAssetOut() {
+        return listAssetOut;
+    }
+
+    public void setListAssetOut(List<AssetOut> listAssetOut) {
+        this.listAssetOut = listAssetOut;
     }
 
     public void searchItem(final String txtWrote) {
-       //Query query;
+        DatabaseReference itemRef = setDatabaseToRead();
 
-        final DatabaseReference searchref = setDatabaseToRead();
+        Log.i("SGS.SIDI", "Iniciando Busca de Dados!");
 
-        //query = searchref.orderByKey();
+        listAssetOut.clear();
 
-        searchref.addValueEventListener(new ValueEventListener() {
+        itemRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.i("SGS.SIDI", "Modificação de dados detectada!");
+                Log.i("SGS.SIDI", "Dados localizados!");
+                for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
+                    AssetOut m = objSnapshot.getValue(AssetOut.class);
 
-                int objC = 1;
+                    if ((m.getAsset().equals(txtWrote)) && (!m.getStatus().equals("Concluído"))) {
 
-                for (DataSnapshot d : dataSnapshot.getChildren()) {
-                    AssetOut m = d.getValue(AssetOut.class);
-
-                    Log.i("FIREBASES", dataSnapshot.getValue().toString());
-
-                    Log.i("SGS.SIDI", "Objeto " + objC++);
-                    Log.i("SGS.SIDI", "Nome: " + m.getNome());
-                    Log.i("SGS.SIDI", "Tipo: " + m.getTipo());
-                    Log.i("SGS.SIDI", "Codigo: " + m.getAsset());
-                    Log.i("SGS.SIDI", "Destino: " + m.getDestino());
-                    Log.i("SGS.SIDI", "Status: " + m.getStatus());
-
-                    if (m.getAsset().equals(txtWrote)) {
-
-                        st = m;
-                        Log.i("SGS.SIDI", "Informação encontrada na base: " + st.getAsset());
+                        //Log.i("SGS.OBJ.SIDI", "CHAVE DO OBJETO: " + objSnapshot.getKey());
+                        //Log.i("SGS.SIDI", "Informação encontrada na base: " + dataSnapshot.getValue().toString());
+                        listAssetOut.add(m);
+                        uuid = objSnapshot.getKey();
 
                     } else {
                         Log.i("SGS.SIDI", "Valor não encontrado!");
@@ -84,12 +83,7 @@ public class ControlData {
         });
     }
 
-    private DatabaseReference setDatabaseToRead(){
 
-        DatabaseReference readData = referenceDB.child(NODE_DB);
-
-        return readData;
-    }
 
     public void writeData (String nome, String destino, String codasset, String tipo, String status){
 
@@ -105,6 +99,14 @@ public class ControlData {
         DatabaseReference carryoutSgsReference = setDatabaseToRead();
 
         carryoutSgsReference.child(uuid).child("status").setValue(status);
+    }
+
+
+    private DatabaseReference setDatabaseToRead(){
+
+        DatabaseReference readData = referenceDB.child(NODE_DB);
+
+        return readData;
     }
 
     private DatabaseReference setDatabaseDataToWrite(){
