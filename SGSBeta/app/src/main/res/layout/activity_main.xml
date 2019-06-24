@@ -172,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/mag_top_menu"
                         android:fontFamily="@font/ubuntu_mono"
-                        android:text="@string/txt_visitor"
+                        android:text="@string/txt_visitor_search"
                         android:textColor="@color/grayDefault"
                         android:textSize="@dimen/men_font" />
                 </LinearLayout>

@@ -8,29 +8,29 @@ package com.security.br.org.sidi.sgstrial;
 
 public class AssetOut {
 
-    private String nome;
+    private String name;
     private String asset;
-    private String destino;
-    private String tipo;
+    private String destiny;
+    private String type;
     private String status;
 
     public AssetOut() {
     }
 
-    public AssetOut(String nome, String asset, String destino, String tipo, String status) {
-        this.nome = nome;
+    public AssetOut(String name, String asset, String destiny, String type, String status) {
+        this.name = name;
         this.asset = asset;
-        this.destino = destino;
-        this.tipo = tipo;
+        this.destiny = destiny;
+        this.type = type;
         this.status = status;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAsset() {
@@ -41,20 +41,20 @@ public class AssetOut {
         this.asset = asset;
     }
 
-    public String getDestino() {
-        return destino;
+    public String getDestiny() {
+        return destiny;
     }
 
-    public void setDestino(String destino) {
-        this.destino = destino;
+    public void setDestiny(String destiny) {
+        this.destiny = destiny;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getType() {
+        return type;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getStatus() {

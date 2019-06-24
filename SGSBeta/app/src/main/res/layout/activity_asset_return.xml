@@ -62,7 +62,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:background="@color/colorPrimary"
-            android:text="@string/txt_end_transfer"
+            android:text="@string/txt_finish"
             android:textColor="@color/whiteDefault"
             android:textStyle="bold"
             android:visibility="invisible"

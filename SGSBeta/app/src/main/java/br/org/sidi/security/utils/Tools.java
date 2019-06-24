@@ -1,9 +1,7 @@
 package br.org.sidi.security.utils;
 
 import android.app.Activity;
-
 import android.os.Handler;
-
 import android.widget.Toast;
 
 public class Tools {
@@ -11,14 +9,6 @@ public class Tools {
     private static int clique = 0;
 
     public Tools() {
-    }
-
-    public void DialogMessageShort (Activity m, String message){
-        Toast.makeText(m, message, Toast.LENGTH_SHORT).show();
-    }
-
-    public void DialogMessageLong (Activity m, String message){
-        Toast.makeText(m, message, Toast.LENGTH_LONG).show();
     }
 
     public static boolean testClick(int ms) {
@@ -39,6 +29,14 @@ public class Tools {
 
         handler.postDelayed(r, 1000);
         return false;
+    }
+
+    public static void alertLong (Activity act, String m){
+        Toast.makeText(act, m, Toast.LENGTH_LONG).show();
+    }
+
+    public static void alertShort (Activity act, String m){
+        Toast.makeText(act, m, Toast.LENGTH_SHORT).show();
     }
 
 }

@@ -1,5 +1,6 @@
 package br.org.sidi.security.ui.activity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,12 +15,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.org.sidi.security.R;
-import br.org.sidi.security.data.Conection;
+import br.org.sidi.security.data.Connection;
 
 public class PasswordResetActivity extends AppCompatActivity {
 
     private EditText editEmail;
     private Button btnPasswordReset;
+    private android.app.AlertDialog.Builder dialog;
 
     private FirebaseAuth auth;
 
@@ -61,14 +63,52 @@ public class PasswordResetActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            alert("Um e-mail foi enviado para alterar sua senha!");
-                            finish();
+                            dialogReturn("Alteração de Senha","Você receberá um e-mail com o link para mudança da senha!");
                         }else{
-                            alert("E-mail fornecido não cadastrado!");
+                            dialog("Alteração de Senha", "E-mail fornecido não cadastrado!");
                         }
                     }
                 });
 
+    }
+
+    private void dialogReturn(String t, String m){
+        dialog = new android.app.AlertDialog.Builder(PasswordResetActivity.this);
+
+        dialog.setTitle(t);
+        dialog.setMessage(m);
+
+        dialog.setCancelable(false);
+
+        dialog.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+
+        dialog.create();
+        dialog.show();
+    }
+
+
+    private void dialog(String t, String m){
+        dialog = new android.app.AlertDialog.Builder(PasswordResetActivity.this);
+
+        dialog.setTitle(t);
+        dialog.setMessage(m);
+
+        dialog.setCancelable(false);
+
+        dialog.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog.create();
+        dialog.show();
     }
 
     private void alert(String s) {
@@ -79,6 +119,6 @@ public class PasswordResetActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        auth = Conection.getFirebaseAuth();
+        auth = Connection.getFirebaseAuth();
     }
 }

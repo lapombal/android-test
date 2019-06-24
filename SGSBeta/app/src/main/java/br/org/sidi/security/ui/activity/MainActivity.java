@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.org.sidi.security.R;
-import br.org.sidi.security.data.Conection;
+import br.org.sidi.security.data.Connection;
 import br.org.sidi.security.utils.Tools;
 
 /********************************************
@@ -45,20 +46,22 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    private Tools mjonir;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        checkPermission(req_permission);
+        //checkPermission(req_permission);
 
         verifyConnection();
 
-        startItem();
+        startUIComponents();
 
-        execCards();
+        startClickEvents();
+    }
+
+    private void alert(String s) {
+        Toast.makeText(MainActivity.this, s, Toast.LENGTH_LONG).show();
     }
 
     //Método de Conexão com Firebase Authenticator
@@ -67,15 +70,16 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null){
-            mjonir.DialogMessageLong(MainActivity.this,"Bem vindo de volta " + user.getEmail() + "!");
+            //alert("Bem vindo de volta " + user.getEmail() + "!");
+            Tools.alertLong(MainActivity.this, "Bem vindo de volta " + user.getEmail() + "!");
         }else{
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
         }
     }
 
     //Métodos de Interface
-    private void startItem() {
+    private void startUIComponents() {
 
         card_co_asset    = findViewById(R.id.cd_co_asset);
         card_ci_asset    = findViewById(R.id.cd_ci_asset);
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         card_exit        = findViewById(R.id.cd_exit);
     }
 
-    private void execCards() {
+    private void startClickEvents() {
 
         card_co_asset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
 
                }catch (Exception e){
 
-                   mjonir.DialogMessageShort(MainActivity.this, "Não foi possível validar a interface!");
+                   //alert("Não foi possível validar a interface!");
+                   Tools.alertLong(MainActivity.this, "Não foi possível validar a interface!");
                    Log.e("SGSBeta", "Erro: " + e.getMessage());
                }
 
@@ -116,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
 
                 }catch (Exception e){
 
-                    mjonir.DialogMessageShort(MainActivity.this, "Não foi possível validar a interface!");
+                    //alert("Não foi possível validar a interface!");
+                    Tools.alertLong(MainActivity.this, "Não foi possível validar a interface!");
                     Log.e("SGSBeta", "Erro: " + e.getMessage());
 
                 }
@@ -135,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
 
                 }catch (Exception e){
 
-                    mjonir.DialogMessageShort(MainActivity.this, "Não foi possível validar a interface!");
+                    //alert("Não foi possível validar a interface!");
+                    Tools.alertLong(MainActivity.this, "Não foi possível validar a interface!");
                     Log.e("SGSBeta", "Erro: " + e.getMessage());
 
                 }
@@ -154,7 +161,8 @@ public class MainActivity extends AppCompatActivity {
 
                 }catch (Exception e){
 
-                    mjonir.DialogMessageShort(MainActivity.this, "Não foi possível validar a interface!");
+                    //alert("Não foi possível validar a interface!");
+                    Tools.alertLong(MainActivity.this, "Não foi possível validar a interface!");
                     Log.e("SGSBeta", "Erro: " + e.getMessage());
 
                 }
@@ -173,7 +181,8 @@ public class MainActivity extends AppCompatActivity {
 
                 }catch (Exception e){
 
-                    mjonir.DialogMessageShort(MainActivity.this, "Não foi possível validar a interface!");
+                    //alert("Não foi possível validar a interface!");
+                    Tools.alertLong(MainActivity.this, "Não foi possível validar a interface!");
                     Log.e("SGSBeta", "Erro: " + e.getMessage());
 
                 }
@@ -184,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         card_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Conection.logout(mAuth);
+                Connection.logout(mAuth);
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 finish();
             }
@@ -197,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
     private void checkPermission (String[] perm){
 
         try{
+
             if (Build.VERSION.SDK_INT >= 23){
                 List<String> listPerm = new ArrayList<>();
 
@@ -217,7 +227,8 @@ public class MainActivity extends AppCompatActivity {
 
         }catch (Exception e){
 
-            mjonir.DialogMessageLong(MainActivity.this, "Não foi possível validar as permissões!");
+            //alert("Não foi possível validar as permissões!");
+            Tools.alertLong(MainActivity.this, "Não foi possível validar as permissões!");
             Log.e("SGSBeta", "Erro: " + e.getMessage());
         }
 
@@ -239,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
         try{
             builder.setTitle("Permissões Negadas");
-            builder.setMessage("Para utilizar o Aplicativo, é necessário aceitar todas as permissões!");
+            builder.setMessage("Para a utilização do aplicativo, é necessário aceitar todas as permissões solicitadas!");
 
             builder.setPositiveButton("Tentar Novamente", new DialogInterface.OnClickListener() {
                 @Override
@@ -260,7 +271,8 @@ public class MainActivity extends AppCompatActivity {
 
         }catch (Exception e){
 
-            mjonir.DialogMessageLong(MainActivity.this, "Não foi possível enviar alerta de permissões!");
+            //alert("Não foi possível enviar alerta de permissões!");
+            Tools.alertLong(MainActivity.this, "Não foi possível enviar alerta de permissões!");
             Log.e("SGSBeta", "Erro: " + e.getMessage());
         }
 

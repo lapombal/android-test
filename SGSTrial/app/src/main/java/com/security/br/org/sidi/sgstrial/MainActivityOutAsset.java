@@ -108,7 +108,6 @@ public class MainActivityOutAsset extends AppCompatActivity {
         }
 
         return txtRdoButton;
-
     }
 
     private String checkInformation (){
