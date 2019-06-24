@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Central de Segurança</string>
+    <string name="txt_menu">Menu Principal</string>
+    <string name="txt_visitor_search">Consultar Visitante</string>
+    <string name="txt_password_reset">Esqueci minha Senha</string>
+    <string name="txt_out_asset">Saída de Equipamento</string>
+    <string name="txt_in_asset">Entrada de Equipamento</string>
+    <string name="txt_exit">Sair</string>
+    <string name="txt_sticker_laptop">Selo de Notebook</string>
+    <string name="txt_sticker_num">Número do Selo</string>
+    <string name="txt_sticker_num_legend">Digite o Número do Selo</string>
+    <string name="txt_search_sticker">Pesquisar Selo de Notebook</string>
+    <string name="txt_visitor">Visitante</string>
+    <string name="txt_reg_visitor">Registrar Visitante</string>
+    <string name="txt_transfer">Nova Transferência</string>
+    <string name="txt_end_transfer">Concluir Transferência</string>
+    <string name="txt_exit_app">Sair do Aplicativo</string>
+    <string name="txt_employee_name">Nome do Colaborador</string>
+    <string name="txt_destiny_asset">Destino do Equipamento</string>
+    <string name="txt_bld_jer">Jerivá</string>
+    <string name="txt_bld_jac">Jacarandá</string>
+    <string name="txt_id_employee">ID do Colaborador</string>
+    <string name="txt_id_employee_legend">Digite o ID de Rede do Colaborador</string>
+    <string name="txt_code_asset">Codigo do Equipamento</string>
+    <string name="txt_code_asset_legend">Digite o Código do Equipamento</string>
+    <string name="txt_type_asset">Tipo do Equipamento</string>
+    <string name="txt_desktop">Desktop</string>
+    <string name="txt_laptop">Laptop</string>
+    <string name="txt_gadgets">Amostras</string>
+    <string name="txt_access">Acessórios</string>
+    <string name="txt_finish">Concluir</string>
+    <string name="txt_barcode_screen">Leia o Barcode ou QRCode</string>
+    <string name="txt_lost_password">Esqueci minha senha!</string>
+    <string name="txt_login">Entrar</string>
+    <string name="txt_email_login">E-mail</string>
+    <string name="txt_password_login">Senha</string>
+</resources>

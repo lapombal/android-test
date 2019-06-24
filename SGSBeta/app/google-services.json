@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "109780680553",
+    "firebase_url": "https://sgsbetahml.firebaseio.com",
+    "project_id": "sgsbetahml",
+    "storage_bucket": "sgsbetahml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109780680553:android:3bdfbf171d5ba8f6",
+        "android_client_info": {
+          "package_name": "br.org.sidi.security"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109780680553-t0d8fhljff7uf27a68hrs4if746l7h3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.org.sidi.security",
+            "certificate_hash": "117dffc0b1f118d8278b60e681149e2d5e79bb71"
+          }
+        },
+        {
+          "client_id": "109780680553-s4qnudk60bf85uhbpdejuuljtba8sjj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZn5goMfUn7b4oKlQtWazjt-FCaIKY6wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109780680553-s4qnudk60bf85uhbpdejuuljtba8sjj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

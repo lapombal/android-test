@@ -83,8 +83,6 @@ public class ControlData {
         });
     }
 
-
-
     public void writeData (String nome, String destino, String codasset, String tipo, String status){
 
         DatabaseReference carryoutSgsReference = setDatabaseDataToWrite();

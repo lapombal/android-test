@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.AssetOutActivity">
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tm_Layout"
+        android:layout_marginTop="@dimen/mg_TopBtn"
+        android:layout_marginBottom="@dimen/mg_TopBtn" />
+
+    <TextView
+        android:id="@+id/lbl_IDEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mg_Space"
+        android:text="@string/txt_id_employee"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/ubuntu_mono"
+        tools:text="@string/txt_id_employee" />
+
+    <EditText
+        android:id="@+id/edt_IdEmployee"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/txt_id_employee_legend"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        tools:targetApi="o"
+        app:fontFamily="@font/ubuntu_mono"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tm_Layout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/lbl_Destiny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mg_Space"
+        android:text="@string/txt_destiny_asset"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <RadioGroup
+        android:id="@+id/rdo_GroupDestiny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="auto"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="129dp">
+
+        <RadioButton
+            android:id="@+id/rdo_BTJeriva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/radioSpace"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txt_bld_jer"
+            app:fontFamily="@font/ubuntu_mono" />
+
+        <RadioButton
+            android:id="@+id/rdo_BTJacaranda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/radioSpace"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:includeFontPadding="false"
+            android:text="@string/txt_bld_jac"
+            app:fontFamily="@font/ubuntu_mono" />
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tm_Layout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/lbl_Code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mg_Space"
+        android:text="@string/txt_code_asset"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edt_CodeAsset"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mg_Space"
+            android:ems="10"
+            android:hint="@string/txt_code_asset_legend"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:fontFamily="@font/ubuntu_mono"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/btn_Barcode"
+            android:layout_width="47dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ic_barcode_reader"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tm_Layout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/lbl_TAsset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mg_Space"
+        android:text="@string/txt_type_asset"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/ubuntu_mono" />
+
+    <RadioGroup
+        android:id="@+id/rdo_GroupTAsset"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdo_BTDesktop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txt_desktop"
+            app:fontFamily="@font/ubuntu_mono" />
+
+        <RadioButton
+            android:id="@+id/rdo_BTLaptop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txt_laptop"
+            app:fontFamily="@font/ubuntu_mono" />
+
+        <RadioButton
+            android:id="@+id/rdo_BTSample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txt_gadgets"
+            app:fontFamily="@font/ubuntu_mono" />
+
+        <RadioButton
+            android:id="@+id/rdo_BTAcess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:text="@string/txt_access"
+            app:fontFamily="@font/ubuntu_mono" />
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tm_Layout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_Transfer"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="41dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/txt_finish"
+            android:textColor="@color/whiteDefault"
+            android:textStyle="bold"
+            app:fontFamily="@font/ubuntu_mono"/>
+    </RelativeLayout>
+
+</LinearLayout>

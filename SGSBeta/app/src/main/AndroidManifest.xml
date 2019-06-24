@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.org.sidi.security">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_sgs_ico"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_sgs_ico"
+        android:supportsRtl="true">
+        <activity android:name=".ui.activity.LaptopStickerActivity"
+            android:label="@string/txt_search_sticker"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SystemTheme"
+            >
+        </activity>
+        <activity
+            android:name=".ui.activity.VisitorSearchActivity"
+            android:label="@string/txt_visitor_search"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SystemTheme">
+        </activity>
+        <activity
+            android:name=".ui.activity.RegisterVisitorActivity"
+            android:label="@string/txt_reg_visitor"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SystemTheme"></activity>
+        <activity
+            android:name=".ui.activity.PasswordResetActivity"
+            android:label="@string/txt_password_reset"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/LoginTheme"></activity>
+        <activity
+            android:name=".ui.activity.AssetReturnActivity"
+            android:label="@string/txt_end_transfer"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SystemTheme"></activity>
+        <activity
+            android:name=".ui.activity.AssetOutActivity"
+            android:label="@string/txt_transfer"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SystemTheme"></activity>
+        <activity
+            android:name=".ui.task.QRBarCodeActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SystemTheme"></activity>
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/LoginTheme"></activity>
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
